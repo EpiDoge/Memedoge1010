@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    body {
+      background: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    canvas {
+      border: 1px solid white;
+    }
+  </style>
+  <body>
+    <canvas height="400" width="400" id="canv"></canvas>
+    <script>
+      var canvas = document.getElementById('canv');
+      var context = canvas.getContext('2d');
+
+      var grid = 16;
+      var count = 0;
+
+      var square = {
+        x: 20,
+        y: 20
+      };
+
+      count = 0;
+      context.clearRect(0,0,canvas.width,canvas.height);
+      
+    </script>
+  </body>
+</html>
