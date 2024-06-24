@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <style>
+            div {
+                width: fit-content;
+                margin: auto;
+                
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+            var n1=0;
+            var n2=0;
+            var memory=0;
+            var ans=0;
+            var op='\0';
+            function factorial(x){
+                var temp=x;
+                for(var i = 1; i < x; i++){
+                    temp*=i;
+                }
+                return temp;
+            }
+        </script>
+        <div class="Calculator">
+            <p id="display">0</p>
+            <div class="Buttons">
+                <div class="Misc">
+                    <button type="button" id="C" onclick="document.getElementById('display').innerHTML='0'; n1=0; n2=0; ans=0; op='\0';">C</button>
+                    <button type="button" id="MW" onclick="memory=parseFloat(document.getElementById('display').innerHTML);">MW</button>
+                    <button type="button" id="MC" onclick="memory=0;">MC</button>
+                    <button type="button" id="MR" onclick="document.getElementById('display').innerHTML='0'+memory;">MR</button>
+                </div>
+                <div class="Numbers">
+                    <button type="button" id="0" onclick="document.getElementById('display').innerHTML+=0">0</button>
+                    <button type="button" id="1" onclick="document.getElementById('display').innerHTML+=1">1</button>
+                    <button type="button" id="2" onclick="document.getElementById('display').innerHTML+=2">2</button>
+                    <button type="button" id="3" onclick="document.getElementById('display').innerHTML+=3">3</button>
+                    <button type="button" id="4" onclick="document.getElementById('display').innerHTML+=4">4</button>
+                    <button type="button" id="5" onclick="document.getElementById('display').innerHTML+=5">5</button>
+                    <button type="button" id="6" onclick="document.getElementById('display').innerHTML+=6">6</button>
+                    <button type="button" id="7" onclick="document.getElementById('display').innerHTML+=7">7</button>
+                    <button type="button" id="8" onclick="document.getElementById('display').innerHTML+=8">8</button>
+                    <button type="button" id="9" onclick="document.getElementById('display').innerHTML+=9">9</button>
+                    <button type="button" id="." onclick="document.getElementById('display').innerHTML+='.'">.</button>
+                </div>
+                <div class="Operators">
+                    <button type="button" id='+' onclick="n1=parseFloat(document.getElementById('display').innerHTML); document.getElementById('display').innerHTML='0'; op='+';">+</button>
+                    <button type="button" id='-' onclick="n1=parseFloat(document.getElementById('display').innerHTML); document.getElementById('display').innerHTML='0'; op='-';">-</button>
+                    <button type="button" id='*' onclick="n1=parseFloat(document.getElementById('display').innerHTML); document.getElementById('display').innerHTML='0'; op='*';">*</button>
+                    <button type="button" id='/' onclick="n1=parseFloat(document.getElementById('display').innerHTML); document.getElementById('display').innerHTML='0'; op='/';">/</button>
+                    <button type="button" id='=' onclick="
+                    n2=parseFloat(document.getElementById('display').innerHTML);
+                    if (op == '+') {
+                       ans=n1+n2;
+                    } else if (op == '-') {
+                        ans=n1-n2;
+                    } else if (op == '*') {
+                        ans=n1*n2;
+                    } else if (op == '/') {
+                        ans=n1/n2;
+                    } else if (op == '^') {
+                        ans=Math.pow(n1, n2);
+                    } else if (op == 'rt') {
+                        ans=Math.pow(n2, 1/n1);
+                    }
+                    document.getElementById('display').innerHTML='0'+ans;">=</button>
+                </div>
+                <div class="ScienceOps">
+                    <button type="button" id="^" onclick="n1=parseFloat(document.getElementById('display').innerHTML); document.getElementById('display').innerHTML='0'; op='^';">^</button>
+                    <button type="button" id="rt" onclick="n1=parseFloat(document.getElementById('display').innerHTML); document.getElementById('display').innerHTML='0'; op='rt';">rt</button>
+                    <button type="button" id="!" onclick="document.getElementById('display').innerHTML='0'+factorial(parseInt(document.getElementById('display').innerHTML))">!</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
